@@ -1,0 +1,20 @@
+.catalog {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  gap: 50px;
+  transition: ease all .5s;
+
+  &__item {
+    border: 1px solid;
+    border-color: rgb(239, 239, 239);
+    border-radius: 2%;
+  }
+
+  &__photo {
+    width: 190px;
+    height: 160px;
+    padding: 4px;
+  }
+}
