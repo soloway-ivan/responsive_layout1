@@ -26,6 +26,9 @@ function browserSync(params) {
   })
 };
 
+  // gulp.watch("src/scss/*.scss");
+  // gulp.watch("src/*.html").on('change', browserSync.reload);
+
 function html() {
   return src(path.src.html)
     .pipe(dest(path.build.html))

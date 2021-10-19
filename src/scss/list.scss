@@ -1,0 +1,24 @@
+.list {
+  &__items {
+    display: flex;
+    gap: 25px;
+  }
+
+  &__item {
+    list-style: none;
+    font-size: 12px;
+  }
+
+  &__item:nth-last-child(1) {
+    min-width: 118px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: rgb(175, 175, 175);
+  }
+
+  &__link:hover {
+    color: rgb(114, 113, 113);
+  }
+}
