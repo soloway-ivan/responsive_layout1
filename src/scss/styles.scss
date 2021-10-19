@@ -1,7 +1,7 @@
 @import '../scss/header.scss';
 @import '../scss/list.scss';
 @import '../scss/catalog.scss';
-
+@import '../scss/media.scss';
 
 body {
   margin: 0;
@@ -13,15 +13,4 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 50px;
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 20px;
-  }
-
-  .catalog {
-    gap: 30px;
-  }
 }

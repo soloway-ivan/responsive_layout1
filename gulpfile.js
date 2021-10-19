@@ -1,5 +1,6 @@
 const sass = require('gulp-sass')(require('sass'));
 const clean = require('gulp-clean');
+// const imagemin = require('gulp-imagemin');
 
 let project_folder = "dist";
 let source_folder = "src";
@@ -7,12 +8,14 @@ let source_folder = "src";
 const path = {
   build: {
     html: project_folder,
-    css: project_folder + "/css"
+    css: project_folder + "/css",
+    images: project_folder +"/img"
   },
 
   src: {
     html: source_folder + "/*.html",
-    css: source_folder + "/scss/styles.scss"
+    css: source_folder + "/scss/styles.scss",
+    images: source_folder + "/images"
   }
 };
 
@@ -37,6 +40,20 @@ function html() {
     }))
 };
 
+// function images() {
+//   return src(path.src.images)
+//     .pipe(
+//       imagemin({
+//         progressive: true,
+//         svgoPlugins: [{ removeViewBox: false}],
+//         interlaced: true,
+//         optimizationLevel: 3
+//       })
+//     )
+//     .pipe(dest(path.build.img))
+//     .pipe(browsersync.reload(stream))
+// };
+
 function scss() {
   return src(path.src.css)
     .pipe(sass())
@@ -56,6 +73,7 @@ let { src, dest } = require('gulp'),
 let build = gulp.series(html, scss);
 let watch = gulp.parallel(build, browserSync);
 
+// exports.images = images;
 exports.html = html;
 exports.build = build;
 exports.watch = watch;
