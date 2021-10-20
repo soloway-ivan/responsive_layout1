@@ -2,11 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(26, 26, 26);
+  background-color: $headerBackgroundColor;
   padding: 0 30px;
   
   &__title {
-    color: rgb(232, 232, 227);
+    color: $headerTitle;
     font-weight: 300;
   }
 }
