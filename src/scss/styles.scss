@@ -1,7 +1,6 @@
-@import '../scss/veriables.scss';
-@import '../scss/header.scss';
-@import '../scss/list.scss';
-@import '../scss/catalog.scss';
+@import 'variables.scss';
+@import 'header.scss';
+@import 'catalog.scss';
 
 body {
   margin: 0;
@@ -13,6 +12,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 @media screen and (min-width: $breakpointXl) {

@@ -1,9 +1,15 @@
+// Fonts
 $fontDefault: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+// Colors
 $colorBody: rgb(252, 251, 252);
-$colorLink: rgb(175, 175, 175);
-$colorLinkHover: rgb(114, 113, 113);
-$headerBackgroundColor: rgb(26, 26, 26);
+$colorGrey: rgb(175, 175, 175);
+$colorDarkGrey: rgb(117, 117, 117);
+$colorBlack: rgb(26, 26, 26);
 $headerTitle: rgb(232, 232, 227);
 $bordersIcons: rgb(239, 239, 239);
+
+// Breakpoints
+$breakpointSm: 576px;
 $breakpointMd: 768px;
 $breakpointXl: 1200px;

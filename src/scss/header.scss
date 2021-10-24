@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: $headerBackgroundColor;
+  background-color: $colorBlack;
   padding: 0 30px;
   
   &__title {
@@ -10,3 +10,35 @@
     font-weight: 300;
   }
 }
+
+.list {
+  &__items {
+    display: flex;
+    gap: 25px;
+  }
+
+  &__item {
+    list-style: none;
+    font-size: 12px;
+  }
+
+  &__item:nth-last-child(1) {
+    min-width: 118px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $colorGrey;
+  }
+
+  &__link:hover {
+    color: $colorDarkGrey;
+  }
+
+  @media screen and (max-width: $breakpointSm) {
+    & {
+      display: none;
+    }
+  }
+}
+
