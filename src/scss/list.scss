@@ -15,10 +15,10 @@
 
   &__link {
     text-decoration: none;
-    color: rgb(175, 175, 175);
+    color: $colorDarkGrey;
   }
 
   &__link:hover {
-    color: rgb(114, 113, 113);
+    color: $colorWhite;
   }
 }

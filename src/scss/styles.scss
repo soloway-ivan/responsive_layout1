@@ -1,27 +1,26 @@
-@import '../scss/header.scss';
-@import '../scss/list.scss';
-@import '../scss/catalog.scss';
-
+@import 'variables.scss';
+@import 'header.scss';
+@import 'list.scss';
+@import 'catalog.scss';
+@import 'media.scss';
 
 body {
   margin: 0;
   padding: 0;
-  color: rgb(252, 251, 252);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: $colorBody;
+  font-family: $fontDefault;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: $breakpointXl;
   margin: 0 auto;
   padding: 0 50px;
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 20px;
-  }
+.show {
+  display: block;
+}
 
-  .catalog {
-    gap: 30px;
-  }
+.lock {
+  overflow: hidden;
 }

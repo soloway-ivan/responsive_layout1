@@ -7,12 +7,14 @@ let source_folder = "src";
 const path = {
   build: {
     html: project_folder,
-    css: project_folder + "/css"
+    css: project_folder + "/css",
+    js: project_folder + "/js"
   },
 
   src: {
     html: source_folder + "/*.html",
-    css: source_folder + "/scss/styles.scss"
+    css: source_folder + "/scss/styles.scss",
+    js: source_folder + "/js/script.js"
   }
 };
 
@@ -25,9 +27,6 @@ function browserSync(params) {
     notify: false
   })
 };
-
-  // gulp.watch("src/scss/*.scss");
-  // gulp.watch("src/*.html").on('change', browserSync.reload);
 
 function html() {
   return src(path.src.html)
@@ -43,6 +42,11 @@ function scss() {
     .pipe(dest(path.build.css))
 };
 
+function js() {
+  return src(path.src.js)
+    .pipe(dest(path.build.js))
+};
+
 function cleaner() {
   return src('dist',
     { read: false })
@@ -53,9 +57,11 @@ let { src, dest } = require('gulp'),
   gulp = require('gulp'),
   browsersync = require("browser-sync").create();
 
-let build = gulp.series(html, scss);
+let build = gulp.series(html, scss, js);
 let watch = gulp.parallel(build, browserSync);
 
+
+exports.js = js;
 exports.html = html;
 exports.build = build;
 exports.watch = watch;
