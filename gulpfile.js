@@ -1,34 +1,37 @@
 const sass = require('gulp-sass')(require('sass'));
 const clean = require('gulp-clean');
+
+// WIP
 // const imagemin = require('gulp-imagemin');
 
-let project_folder = "dist";
-let source_folder = "src";
+let projectFolder = "dist";
+let sourceFolder = "src";
 
 const path = {
   build: {
-    html: project_folder,
-    css: project_folder + "/css",
-    images: project_folder +"/img"
+    html: projectFolder,
+    css: projectFolder + "/css",
+    images: projectFolder +"/img"
   },
 
   src: {
-    html: source_folder + "/*.html",
-    css: source_folder + "/scss/styles.scss",
-    images: source_folder + "/images"
+    html: sourceFolder + "/*.html",
+    css: sourceFolder + "/scss/styles.scss",
+    images: sourceFolder + "/images"
   }
 };
 
 function browserSync(params) {
   browsersync.init({
     server:{
-      baseDir: project_folder
+      baseDir: projectFolder
     },
     port: 3000,
     notify: false
   })
 };
 
+// WIP
   // gulp.watch("src/scss/*.scss");
   // gulp.watch("src/*.html").on('change', browserSync.reload);
 
@@ -40,6 +43,7 @@ function html() {
     }))
 };
 
+// WIP
 // function images() {
 //   return src(path.src.images)
 //     .pipe(
@@ -73,6 +77,7 @@ let { src, dest } = require('gulp'),
 let build = gulp.series(html, scss);
 let watch = gulp.parallel(build, browserSync);
 
+// WIP
 // exports.images = images;
 exports.html = html;
 exports.build = build;
