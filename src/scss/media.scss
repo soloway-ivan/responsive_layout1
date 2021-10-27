@@ -14,7 +14,6 @@
   }
 }
 
-/* burger-menu  */
 @media screen and (max-width: $breakpointSm) {
 
   .header__overlay {
@@ -28,7 +27,7 @@
     background-color: $semiTransparentBlack;
   }
 
-  .burger-menu{
+  .burger-menu {
     display: block;
     position: absolute;
     top: 30px;

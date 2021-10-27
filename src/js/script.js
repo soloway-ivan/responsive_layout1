@@ -1,9 +1,12 @@
-const button = document.querySelector('.burger-menu');
-const list = document.querySelector('.list');
-const overlay = document.querySelector('.header__overlay');
-const body = document.querySelector('.body')
+const selectDOMElement = (selector) => {
+  return document.querySelector(selector);
+};
 
-function burgerMenu() {
+const button = selectDOMElement('.burger-menu');
+const list = selectDOMElement('.list');
+const overlay = selectDOMElement('.header__overlay');
+const body = selectDOMElement('.body')
+
   button.addEventListener('click', (e) => {
     button.classList.toggle('active');
     list.classList.toggle('active');
@@ -17,15 +20,12 @@ function burgerMenu() {
     list.classList.toggle('active');
     body.classList.toggle('lock');
   });
-}
-
-burgerMenu();
 
 function closeBurgerMenu() {
   // Выполняем действие, если ширина меньше 564px
   const windowWidth = window.innerWidth;
 
-  if (windowWidth > 564) {
+  if (windowWidth > $breakpointSm) {
     overlay.classList.remove('show');
     button.classList.remove('active');
     list.classList.remove('active');
@@ -37,3 +37,21 @@ function closeBurgerMenu() {
 window.addEventListener('resize', function () {
   closeBurgerMenu();
 });
+
+//Counter
+const buttonPlus = selectDOMElement('.click-plus');
+const buttonMinus = selectDOMElement('.click-minus');
+const amount = selectDOMElement('.amount');
+let count = amount.innerHTML;
+
+buttonMinus.addEventListener('click', () => {
+  amount.innerHTML = `${amount.innerHTML - 1}`;
+
+  if (amount.innerHTML <= 0) {
+    amount.innerHTML = 0;
+  }
+})
+
+buttonPlus.addEventListener('click', () => {
+  count = `${amount.innerHTML++}`;
+})

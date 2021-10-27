@@ -24,3 +24,20 @@ body {
 .lock {
   overflow: hidden;
 }
+
+.clicker {
+  display: flex;
+  justify-content: center;
+  align-items: baseline
+}
+
+.clicker input {
+  width: 40px;
+  height: 50px;
+}
+
+.amount {
+  font-size: 20px;
+  color: #1a1a1a;
+  margin: 20px;
+}

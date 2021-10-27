@@ -1,8 +1,8 @@
 const sass = require('gulp-sass')(require('sass'));
 const clean = require('gulp-clean');
 
-let project_folder = "dist";
-let source_folder = "src";
+const project_folder = "dist";
+const source_folder = "src";
 
 const path = {
   build: {
@@ -18,9 +18,9 @@ const path = {
   }
 };
 
-function browserSync(params) {
+const browserSync = () => {
   browsersync.init({
-    server:{
+    server: {
       baseDir: project_folder
     },
     port: 3000,
@@ -57,8 +57,8 @@ let { src, dest } = require('gulp'),
   gulp = require('gulp'),
   browsersync = require("browser-sync").create();
 
-let build = gulp.series(html, scss, js);
-let watch = gulp.parallel(build, browserSync);
+const build = gulp.series(html, scss, js);
+const watch = gulp.parallel(build, browserSync);
 
 
 exports.js = js;
